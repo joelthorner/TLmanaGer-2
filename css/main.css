@@ -1,0 +1,116 @@
+@import url(material-components-web.css);
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #000;
+  font-family: 'Roboto';
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+.popup {
+  min-width: 22.5rem;
+  padding: 1.25rem;
+}
+
+.popup .tabs-menu {
+  background-color: #f4f4f4;
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+
+.popup .tabs-menu nav {
+  width: 100%;
+  position: relative;
+}
+
+.popup .tabs-menu nav .mdc-tab {
+  font-size: 0.8125rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.popup .tabs-menu nav .sep {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  top: 0.9375rem;
+  bottom: 0.9375rem;
+  width: 2px;
+  position: absolute;
+  left: 33.33333%;
+  margin-left: -1px;
+}
+
+.popup .tabs-menu nav .sep:nth-child(2) {
+  left: 66.66667%;
+}
+
+.popup .tabs-menu nav .mdc-tab--active, .popup .tabs-menu nav .mdc-tab--active .mdc-tab__icon {
+  color: #000;
+  font-weight: 500;
+}
+
+.header-popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.875rem;
+}
+
+.header-popup .profile {
+  height: 5rem;
+  width: 5rem;
+  border: 2px solid #ebebeb;
+  border-radius: 0.5rem;
+  margin-right: 1.875rem;
+}
+
+.header-popup .title {
+  font-size: 1.25rem;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.header-popup .header-info small {
+  font-size: 0.625rem;
+  color: #acacac;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.rating {
+  direction: rtl;
+}
+
+.rating i {
+  display: block;
+  height: 0.6875rem;
+  width: 1rem;
+  padding-right: 0.3125rem;
+  background-position: top left;
+  background-size: 0.6875rem;
+  float: left;
+  background-repeat: no-repeat;
+}
+
+.rating i, .rating i.active ~ i:hover {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#f8b12c' width='17.114' height='16.356' viewBox='3.443 3.572 17.114 16.356'><path d='M12 17.27l4.15 2.511c.76.46 1.689-.22 1.49-1.08l-1.101-4.72 3.67-3.181c.67-.58.31-1.68-.569-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.541 1.49 1.08l4.15-2.5z'/></svg>");
+}
+
+.rating i:hover ~ i,
+.rating i.active ~ i {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#dddddd' width='17.114' height='16.356' viewBox='3.443 3.572 17.114 16.356'><path d='M12 17.27l4.15 2.511c.76.46 1.689-.22 1.49-1.08l-1.101-4.72 3.67-3.181c.67-.58.31-1.68-.569-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.541 1.49 1.08l4.15-2.5z'/></svg>");
+}
+
+/*# sourceMappingURL=main.css.map */

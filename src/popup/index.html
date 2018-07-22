@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="../../css/main.css">
+
+	<title>TLmanaGer - Popup</title>
+</head>
+<body class="popup">
+	<header class="header-popup">
+		<img src="../../img/logo.svg" alt="Profile image" class="profile">
+		<div class="header-info">
+			<h1 class="title">TLmanaGer 2</h1>
+			<small>v2.0.0</small>
+			<a class="rating" href="https://chrome.google.com/webstore/detail/tlmanager/jaimlomiojjmdhipacahmpnfefpbbeig" target="_blank" title="Rate">
+				<i></i><i></i><i></i><i class="active"></i><i></i>
+			</a>
+		</div>
+	</header>
+
+	<section class="tabs-menu">
+		<nav id="popup-menu" class="mdc-tab-bar" role="tablist">
+			<a role="tab" aria-controls="tab-utils" class="mdc-tab mdc-tab--active" href="#tab-utils">Utils</a>
+			<span class="sep"></span>
+			<a role="tab" aria-controls="tab-testing" class="mdc-tab" href="#tab-testing">Testing</a>
+			<span class="sep"></span>
+			<a role="tab" aria-controls="tab-hacks" class="mdc-tab" href="#tab-hacks">Hacks</a>
+		</nav>
+	</section>
+	<section>
+		<div class="panels">
+			<p class="panel active" id="tab-utils" role="tabpanel" aria-hidden="false">Item One</p>
+			<p class="panel" id="tab-testing" role="tabpanel" aria-hidden="true">Item Two</p>
+			<p class="panel" id="tab-hacks" role="tabpanel" aria-hidden="true">Item Three</p>
+		</div>
+	</section>
+
+	<script src="../../js/material-components-web.min.js"></script>
+	<script src="../../js/jquery-3.3.1.min.js"></script>
+	<script src="../../js/popup.js"></script>
+</body>
+</html>
