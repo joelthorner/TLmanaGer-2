@@ -1,3 +1,4 @@
+// tabs
 var dynamicTabBar = window.dynamicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#popup-menu'));
 var panels = document.querySelector('.panels');
 
@@ -18,6 +19,12 @@ function updatePanel(index) {
 
 dynamicTabBar.listen('MDCTabBar:change', function ({detail: tabs}) {
 	var nthChildIndex = tabs.activeTabIndex;
-
 	updatePanel(nthChildIndex);
+});
+
+// ripples
+$(function() {
+	$('.mdc-ripple-surface').each(function(index, el) {
+		mdc.ripple.MDCRipple.attachTo(el)
+	});
 });

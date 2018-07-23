@@ -27,13 +27,32 @@
 			<a role="tab" aria-controls="tab-testing" class="mdc-tab" href="#tab-testing">Testing</a>
 			<span class="sep"></span>
 			<a role="tab" aria-controls="tab-hacks" class="mdc-tab" href="#tab-hacks">Hacks</a>
+			<span class="mdc-tab-bar__indicator"></span>
 		</nav>
 	</section>
 	<section>
 		<div class="panels">
-			<p class="panel active" id="tab-utils" role="tabpanel" aria-hidden="false">Item One</p>
-			<p class="panel" id="tab-testing" role="tabpanel" aria-hidden="true">Item Two</p>
-			<p class="panel" id="tab-hacks" role="tabpanel" aria-hidden="true">Item Three</p>
+			<div class="panel active" id="tab-utils" role="tabpanel" aria-hidden="false">
+				<div class="items-grid">
+					
+					<button class="item-grid mdc-ripple-surface" type="button">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+							<path fill="none" d="M0 0h24v24H0V0z"/>
+							<g>
+								<path d="M5 18h1c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1zM18 6v11c0 .55.45 1 1 1h1c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1h-1c-.55 0-1 .45-1 1zM9 18h7c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1H9c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1z"/>
+							</g>
+						</svg>
+						<span class="text">Guide lines</span>
+					</button>
+
+				</div>
+			</div>
+			<div class="panel" id="tab-testing" role="tabpanel" aria-hidden="true">
+				Item Two
+			</div>
+			<div class="panel" id="tab-hacks" role="tabpanel" aria-hidden="true">
+				Item Three
+			</div>
 		</div>
 	</section>
 
