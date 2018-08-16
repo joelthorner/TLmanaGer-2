@@ -169,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
-  padding: 0.625rem;
+  padding: 0.625rem 0.3125rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -228,9 +228,9 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   height: 1.5rem;
 }
 
