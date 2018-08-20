@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 		// execute directive
 		chrome.runtime.sendMessage({ directive: directiveName }, function(response) {
-			this.close();
+			// this.close();
 		});
 	});
 
