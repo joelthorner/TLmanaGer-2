@@ -1,3 +1,5 @@
+window.mdc.autoInit();
+
 // tabs
 var dynamicTabBar = window.dynamicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#popup-menu'));
 var panels = document.querySelector('.panels');
@@ -23,10 +25,6 @@ dynamicTabBar.listen('MDCTabBar:change', function ({detail: tabs}) {
 });
 
 $(function() {
-	// ripples
-	$('.mdc-ripple-surface').each(function(index, el) {
-		mdc.ripple.MDCRipple.attachTo(el)
-	});
 
 	$('.item-grid .more-info').click(function(){			
 

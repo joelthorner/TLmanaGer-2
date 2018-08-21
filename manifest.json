@@ -16,6 +16,7 @@
 		],
 		"persistent": false
 	},
+	"options_page": "src/options/index.html",
 	"browser_action": {
 		"default_icon": "icons/icon32.png",
 		"default_title": "TLmanaGer 2",

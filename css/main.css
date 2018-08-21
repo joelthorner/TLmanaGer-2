@@ -1,5 +1,10 @@
 @import url(material-components-web.css);
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+:root {
+  --mdc-theme-primary: #007aff;
+  --mdc-theme-secondary: #00a8ff;
+}
+
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -59,14 +64,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-.header-popup {
+.header-popup, .header-drawer-options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1.875rem;
 }
 
-.header-popup .profile {
+.header-popup .profile, .header-drawer-options .profile {
   height: 5rem;
   width: 5rem;
   border: 2px solid #ebebeb;
@@ -74,14 +79,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 1.875rem;
 }
 
-.header-popup .title {
+.header-popup .title, .header-drawer-options .title {
   font-size: 1.25rem;
   margin-top: 0.3125rem;
   margin-bottom: 0.75rem;
   line-height: 1;
 }
 
-.header-popup .header-info small {
+.header-popup .header-info small, .header-drawer-options .header-info small {
   font-size: 0.625rem;
   color: #acacac;
   line-height: 1;
@@ -350,6 +355,47 @@ h1, h2, h3, h4, h5, h6 {
 
 .rating i:hover ~ i, .rating i.active ~ i {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='#dddddd' width='17.114' height='16.356' viewBox='3.443 3.572 17.114 16.356'><path d='M12 17.27l4.15 2.511c.76.46 1.689-.22 1.49-1.08l-1.101-4.72 3.67-3.181c.67-.58.31-1.68-.569-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.541 1.49 1.08l4.15-2.5z'/></svg>");
+}
+
+.options .drawer-container-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 100vh;
+}
+
+.options .drawer-header-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.options .header-drawer-options {
+  margin-bottom: 0;
+}
+
+.options .mdc-drawer--permanent {
+  width: 18.75rem;
+}
+
+.options .mdc-drawer--permanent .mdc-drawer__header:before {
+  padding-top: 112px;
+}
+
+.options .mdc-top-app-bar--fixed-adjust {
+  padding: 64px 20px 20px;
+}
+
+.options .mdc-top-app-bar {
+  width: calc(100% - 37.5rem);
+}
+
+.options .changelog {
+  border-right: 0;
+  border-left: 1px solid #e4e4e4;
 }
 
 /*# sourceMappingURL=main.css.map */
