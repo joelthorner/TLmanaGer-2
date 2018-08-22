@@ -30,6 +30,12 @@ chrome.runtime.onMessage.addListener(
 					{ file: "js/actions/remove-guide-lines.js" }
 				])
 				break;
+			case 'refresh-get-img':
+				executeScripts(null, [ 
+					{ file: "js/libs/jquery-3.3.1.min.js" },
+					{ file: "js/actions/refresh-get-img.js" }
+				])
+				break;
 		}
 	}
 );
