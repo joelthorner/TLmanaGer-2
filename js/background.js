@@ -12,9 +12,10 @@ function executeScripts(tabId, injectDetailsArray) {
 		callback(); // execute outermost function
 }
 
+// Popup actions
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) {
-		console.log(request, sender, sendResponse);
+
 		switch (request.directive) {
 			case 'add-guide-lines':
 				executeScripts(null, [ 
@@ -36,6 +37,26 @@ chrome.runtime.onMessage.addListener(
 					{ file: "js/actions/refresh-get-img.js" }
 				])
 				break;
+			case 'show-new-templates-2018':
+				executeScripts(null, [ 
+					{ file: "js/libs/jquery-3.3.1.min.js" },
+					{ file: "js/actions/show-new-templates-2018.js" }
+				])
+				break;
 		}
+	}
+);
+
+// External actions
+chrome.runtime.onMessageExternal.addListener(
+	function(request, sender, sendResponse) {
+		if (request) {
+			if (request.message) {
+				if (request.message == "version") {
+					sendResponse({ version: "2.0.0" });
+				}
+			}
+		}
+		return true;
 	}
 );

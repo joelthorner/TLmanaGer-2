@@ -1,3 +1,5 @@
+console.log('TLmanaGer Action: "refresh-get-img";');
+
 var refreshValue = 'refresh=' + new Date().getUTCMilliseconds();
 var refreshGetSymb;
 

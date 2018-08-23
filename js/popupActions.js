@@ -47,5 +47,14 @@ $(document).ready(function() {
 		});
 	});
 
+	// link open action
+	$('.runtime-link').click(function(event) {
+		var directiveName = $(this).data('directive');
+
+		// execute directive
+		var newURL = $(this).data('url');
+		chrome.tabs.create({ url: newURL });
+	});
+
 });
 

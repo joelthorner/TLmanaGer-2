@@ -42,6 +42,12 @@
 	"web_accessible_resources": [
 		"js/*"
 	],
+	"externally_connectable": {
+		"matches": [ 
+			"*://localhost/*",
+			"*://joelthorner.github.io/emilio-generator/"
+		]
+	},
 	"content_scripts": [
 		{
 			"matches": [

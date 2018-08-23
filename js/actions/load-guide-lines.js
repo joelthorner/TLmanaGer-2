@@ -1,3 +1,5 @@
+console.log('TLmanaGer Action: "load-guide-lines";');
+
 var cookie = Cookies.get('add-guide-lines-active');
 
 if (typeof cookie == 'undefined') cookie = 0;
