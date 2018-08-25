@@ -1,30 +1,16 @@
 window.mdc.autoInit();
 
 // tabs
-var dynamicTabBar = window.dynamicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#popup-menu'));
-var panels = document.querySelector('.panels');
-
-dynamicTabBar.tabs.forEach(function(tab) {
-	tab.preventDefaultOnClick = true;
-});
-
-function updatePanel(index) {
-	var activePanel = panels.querySelector('.panel.active');
-	if (activePanel) {
-		activePanel.classList.remove('active');
-	}
-	var newActivePanel = panels.querySelector('.panel:nth-child(' + (index + 1) + ')');
-	if (newActivePanel) {
-		newActivePanel.classList.add('active');
-	}
-}
-
-dynamicTabBar.listen('MDCTabBar:change', function ({detail: tabs}) {
-	var nthChildIndex = tabs.activeTabIndex;
-	updatePanel(nthChildIndex);
-});
+new mdc.tab.MDCTab(document.querySelector('.mdc-tab'));
+new mdc.tabBar.MDCTabBar(document.querySelector('.mdc-tab-bar'));
 
 $(function() {
+
+	$('.mdc-tab').click(function(event) {
+		var id =  $(this).data('target');
+		$('.panel').removeClass('active');
+		$(id).addClass('active');
+	});
 
 	$('.item-grid .more-info').click(function(){			
 

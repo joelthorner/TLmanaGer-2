@@ -1,16 +1,25 @@
+var defaults = {
+	optLcBgActive: true,
+	optLcBgValue: chrome.extension.getURL('img/background-default.jpg'),
+	optLcPagridActive: false,
+	optLcOpBarActive: true,
+	optDevForceview: true,
+	optProfileName: 'Booker DeWitt',
+	optProfileAvatar: 'img/logo.svg'
+};
+
 // Saves options to chrome.storage
-function save_options() {
-	var optLcBgActive = $('#opt-lc-bg-active').prop('checked');
-	var optLcBgValue = $('#opt-lc-bg-value').val();
-	
-	var optLcPagridActive = $('#opt-lc-pagrid-active').prop('checked');
+function saveOptions() {
 
 	chrome.storage.sync.set({
 
-		optLcBgActive: optLcBgActive,
-		optLcBgValue: optLcBgValue,
-
-		optLcPagridActive: optLcPagridActive
+		optLcBgActive: $('#opt-lc-bg-active').prop('checked'),
+		optLcBgValue: $('#opt-lc-bg-value').val(),
+		optLcPagridActive: $('#opt-lc-pagrid-active').prop('checked'),
+		optLcOpBarActive: $('#opt-lc-op-bar-active').prop('checked'),
+		optDevForceview: $('#opt-dev-forceview').prop('checked'),
+		optProfileName: $('#opt-profile-name').val(),
+		optProfileAvatar: $('[name="opt-profile-avatar"]:checked').val()
 
 	}, function() {
 		// Update status to let user know options were saved.
@@ -25,22 +34,17 @@ function save_options() {
 
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
-function restore_options() {
+function restoreOptions() {
 	// Defaults
-	chrome.storage.sync.get({
-		
-		optLcBgActive: true,
-		optLcBgValue: chrome.extension.getURL('img/background-default.jpg'),
-		optLcPagridActive: false,
-
-	}, function(items) {
+	chrome.storage.sync.get(defaults, function(items) {
 		
 		$('#opt-lc-bg-active')
 			.prop('checked', items.optLcBgActive)
 			.filter(function(index) {
-				if (items.optLcBgActive) return true;
+				var $parent = $(this).parents('.mdc-switch');
+				if (items.optLcBgActive) $parent.addClass('mdc-switch--checked');
+				else $parent.removeClass('mdc-switch--checked');
 			})
-			.parents('.mdc-switch').addClass('mdc-switch--checked');
 		
 		$('#opt-lc-bg-value')
 			.val(items.optLcBgValue)
@@ -53,25 +57,66 @@ function restore_options() {
 		$('#opt-lc-pagrid-active')
 			.prop('checked', items.optLcPagridActive)
 			.filter(function(index) {
-				if (items.optLcPagridActive) return true;
+				var $parent = $(this).parents('.mdc-switch');
+				if (items.optLcPagridActive) $parent.addClass('mdc-switch--checked');
+				else $parent.removeClass('mdc-switch--checked');
 			})
-			.parents('.mdc-switch').addClass('mdc-switch--checked');
+
+		$('#opt-lc-op-bar-active')
+			.prop('checked', items.optLcOpBarActive)
+			.filter(function(index) {
+				var $parent = $(this).parents('.mdc-switch');
+				if (items.optLcOpBarActive) $parent.addClass('mdc-switch--checked');
+				else $parent.removeClass('mdc-switch--checked');
+			})
+
+		$('#opt-dev-forceview')
+			.prop('checked', items.optDevForceview)
+			.filter(function(index) {
+				var $parent = $(this).parents('.mdc-switch');
+				if (items.optDevForceview) $parent.addClass('mdc-switch--checked');
+				else $parent.removeClass('mdc-switch--checked');
+			})
+
+		$('#opt-profile-name')
+			.val(items.optProfileName)
+			.filter(function(index) {
+				if ($.trim(items.optProfileName).length) return true;
+			})
+			.next()
+			.addClass('mdc-floating-label--float-above');
+
+		$('[name="opt-profile-avatar"]')
+			.parents('.avatar')
+			.removeClass('active')
+			.parents('.grid-avatar')
+			.find('input')
+			.filter(function(index) {
+				if ($(this).val() == items.optProfileAvatar) return true;
+			})
+			.prop('checked', true)
+			.parents('.avatar').addClass('active')
 	});
 }
 
-function restore_dev() {
-	chrome.storage.sync.set({
-		
-		optLcBgActive: true,
-		optLcBgValue: chrome.extension.getURL('img/background-default.jpg')
-
-	}, function() {});
+function resetOptions() {
+	chrome.storage.sync.set(defaults, function() {});
 }
 
 $(document).ready(function() {
-	restore_options();
+	restoreOptions();
 
 	$('#save-options').click(function(event) {
-		save_options();
+		saveOptions();
+	});
+
+	$('#reset-options').click(function(event) {
+		resetOptions();
+		restoreOptions();
+		var dataObj = {
+			message: "Restored options",
+			actionText: 'Close'
+		};
+		snackbar.show(dataObj);
 	});
 });

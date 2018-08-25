@@ -35,20 +35,49 @@
 	</header>
 
 	<section class="tabs-menu">
-		<nav id="popup-menu" class="mdc-tab-bar" role="tablist">
-			<a role="tab" aria-controls="tab-utils" class="mdc-tab mdc-tab--active" href="#tab-utils">Utils</a>
-			<span class="sep"></span>
-			<a role="tab" aria-controls="tab-testing" class="mdc-tab" href="#tab-testing">Testing</a>
-			<span class="sep"></span>
-			<a role="tab" aria-controls="tab-hacks" class="mdc-tab" href="#tab-hacks">Hacks</a>
-			<span class="mdc-tab-bar__indicator"></span>
-		</nav>
+		<div id="popup-menu" class="mdc-tab-bar" role="tablist">
+			<div class="mdc-tab-scroller">
+				<div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll">
+					<div class="mdc-tab-scroller__scroll-content">
+						<button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" data-target="#tab-utils">
+							<span class="mdc-tab__content">
+								<span class="mdc-tab__text-label">Utils</span>
+							</span>
+							<span class="mdc-tab-indicator mdc-tab-indicator--active">
+								<span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+							</span>
+							<span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+						</button>
+						<span class="sep"></span>
+						<button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" data-target="#tab-testing">
+							<span class="mdc-tab__content">
+								<span class="mdc-tab__text-label">Testing</span>
+							</span>
+							<span class="mdc-tab-indicator">
+								<span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+							</span>
+							<span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+						</button>
+						<span class="sep"></span>
+						<button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" data-target="#tab-hacks">
+							<span class="mdc-tab__content">
+								<span class="mdc-tab__text-label">Hacks</span>
+							</span>
+							<span class="mdc-tab-indicator">
+								<span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+							</span>
+							<span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 	<section>
 		<div class="panels">
 			<div class="panel active" id="tab-utils" role="tabpanel" aria-hidden="false">
 				<div class="items-grid">
-					
+
 					<div class="item-grid">
 						<button id="guide-lines-btn" data-directive="add-guide-lines" class="runtime-action btn-action mdc-ripple-surface" data-mdc-auto-init="MDCRipple" type="button">
 							<div class="wrap">
@@ -163,6 +192,7 @@
 	<script src="../../js/libs/jquery-3.3.1.min.js"></script>
 	<script src="../../js/libs/js.cookie.js"></script>
 	<script src="../../js/libs/popper.min.js"></script>
+	<script src="../../js/libs/tooltip.min.js"></script>
 	<script src="../../js/popupVisual.js"></script>
 	<script src="../../js/popupActions.js"></script>
 </body>
