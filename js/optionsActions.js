@@ -86,8 +86,7 @@ function restoreOptions() {
 			.next()
 			.addClass('mdc-floating-label--float-above');
 
-		$('[name="opt-profile-avatar"]')
-			.parents('.avatar')
+		$('.avatar')
 			.removeClass('active')
 			.parents('.grid-avatar')
 			.find('input')
@@ -105,6 +104,11 @@ function resetOptions() {
 
 $(document).ready(function() {
 	restoreOptions();
+
+	$('[name="opt-profile-avatar"]').change(function(event) {
+		$('.avatar').removeClass('active');
+		$(this).parents('.avatar').addClass('active');
+	});
 
 	$('#save-options').click(function(event) {
 		saveOptions();

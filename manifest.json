@@ -41,7 +41,8 @@
 		"<all_urls>"
 	],
 	"web_accessible_resources": [
-		"js/*"
+		"js/*",
+		"img/*"
 	],
 	"externally_connectable": {
 		"matches": [ 
@@ -52,10 +53,42 @@
 	"content_scripts": [
 		{
 			"matches": [
-				"<all_urls>"
+				"*://8x-hk.logicommerce.net/*",
+				"*://8x-os.logicommerce.net/*",
+				"*://8x.logicommerce.net/*",
+				"*://8x.logicommerce.cn/*",
+				"*://adm.igd.production/*",
+				"*://adm.igd.pre.production/*"
+			],
+			"js": [
+				"js/libs/jquery-3.3.1.min.js",
+				"js/inject/background-lc.js",
+				"js/inject/pages-grid-lc.js"
+			]
+		},
+		{
+			"matches": [
+				"*://8x-os.logicommerce.net/*"
+			],
+			"js": [
+				"js/libs/jquery-3.3.1.min.js",
+				"js/inject/dev-opensaas-bar.js"
 			],
 			"css": [
-				"src/inject/inject.css"
+				"css/inject/dev-opensaas-bar.css"
+			]
+		},
+		{
+			"matches": [
+				"*://*.logicommerce.net/*"
+			],
+			"exclude_matches": [
+				"*://8x-hk.logicommerce.net/*",
+				"*://8x-os.logicommerce.net/*",
+				"*://8x.logicommerce.net/*"
+			],
+			"js": [
+				"js/inject/force-forceview.js"
 			]
 		},
 		{
